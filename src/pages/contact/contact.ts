@@ -2,21 +2,21 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /*
-  Generated class for the Home page.
+  Generated class for the Contact page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-contact',
+  templateUrl: 'contact.html'
 })
-export class HomePage {
+export class ContactPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log('ionViewDidLoad ContactPage');
   }
 
 }
