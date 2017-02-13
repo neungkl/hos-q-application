@@ -13,6 +13,15 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class DepartmentPage {
 
+  public departmentList = [
+    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
+    { name: 'คลินิกโรคเฉพาะทาง', selected: true },
+    { name: 'คลินิกทันตกรรม', selected: false },
+    { name: 'คลินิกกายภาพบำบัด', selected: false },
+    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: true },
+    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {

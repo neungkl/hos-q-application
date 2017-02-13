@@ -7,11 +7,19 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p.page)">
+        <ion-icon item-left name="{{ p.icon }}"></ion-icon>
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
+
+  <ion-footer>
+    <button ion-item no-lines menuClose (click)="openPage(loginPage)">
+      <ion-icon item-left name="log-in"></ion-icon>
+      Login
+    </button>
+  </ion-footer>
 
 </ion-menu>
 

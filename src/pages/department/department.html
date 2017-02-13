@@ -3,11 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Department</ion-title>
+    <ion-title>แผนก</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <h3 text-center>กรุณาเลือกแผนก :</h3>
+
+  <ion-list>
+    <ion-list-header>
+      รายชื่อแผนก :
+    </ion-list-header>
+    <ion-item *ngFor="let item of departmentList">
+      <ion-label>{{ item.name }}</ion-label>
+      <ion-toggle [(checked)]="item.selected"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
 
 </ion-content>

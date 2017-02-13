@@ -2,19 +2,17 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
-import { SettingsPage } from '../pages/settings/settings';
-import { AccountPage } from '../pages/account/account';
 import { QueuePage } from '../pages/queue/queue';
 import { DepartmentPage } from '../pages/department/department';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
-    SettingsPage,
-    AccountPage,
     QueuePage,
-    DepartmentPage
+    DepartmentPage,
+    LoginPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,10 +21,9 @@ import { DepartmentPage } from '../pages/department/department';
   entryComponents: [
     MyApp,
     TabsPage,
-    AccountPage,
-    SettingsPage,
     QueuePage,
-    DepartmentPage
+    DepartmentPage,
+    LoginPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
