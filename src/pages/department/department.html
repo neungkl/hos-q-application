@@ -15,9 +15,9 @@
     <ion-list-header>
       รายชื่อแผนก :
     </ion-list-header>
-    <ion-item *ngFor="let item of departmentList">
+    <ion-item *ngFor="let item of departmentService.list">
       <ion-label>{{ item.name }}</ion-label>
-      <ion-toggle [(checked)]="item.selected"></ion-toggle>
+      <ion-toggle [(ngModel)]="item.selected"></ion-toggle>
     </ion-item>
   </ion-list>
 

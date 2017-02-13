@@ -3,11 +3,13 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
-
 import { LoginPage } from '../pages/login/login';
 
+import { DepartmentService } from '../services/department.service';
+
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [ DepartmentService ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -22,7 +24,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Queue', icon: 'logo-buffer', page: TabsPage }
+      { title: 'ระบบคิว', icon: 'logo-buffer', page: TabsPage }
     ];
 
   }

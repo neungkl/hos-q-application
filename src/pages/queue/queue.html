@@ -3,19 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Queue</ion-title>
+    <ion-title>ระบบคิว</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout combined with sidemnu for apps.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs, update any existing page or create new pages.
-  </p>
-  <p>
-    This is a combination of Ionic 2 Tabs and Sidemenu. For more info, see related <a href="https://blog.khophi.co/ionic-2-side-menu-tabs/">Ionic 2 Sidemenu and Tabs</a> article by <a href="https://blog.khophi.co">Khophi's Dev</a>
-  </p>
+  <div *ngFor="let item of departmentService.list">
+    <ion-card *ngIf="item.selected">
+      <ion-card-header>
+        {{ item.id }} {{ item.name }}
+      </ion-card-header>
+      <ion-card-content>
+        <h1 text-center>{{ item.queue }}</h1>
+      </ion-card-content>
+      <button ion-button full>จองคิว</button>
+    </ion-card>
+  </div>
 </ion-content>

@@ -1,31 +1,20 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Department page.
+import { DepartmentService } from '../../services/department.service';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-department',
   templateUrl: 'department.html'
 })
 export class DepartmentPage {
 
-  public departmentList = [
-    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
-    { name: 'คลินิกโรคเฉพาะทาง', selected: true },
-    { name: 'คลินิกทันตกรรม', selected: false },
-    { name: 'คลินิกกายภาพบำบัด', selected: false },
-    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: true },
-    { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
-  ];
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public departmentService: DepartmentService ) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DepartmentPage');
   }
 
+  updateSelected(item) {
+    console.log(item);
+  }
 }
