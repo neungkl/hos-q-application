@@ -8,6 +8,10 @@
 </ion-header>
 
 <ion-content class="content" padding>
+  <div text-center *ngIf="dataService.department.length == 0">
+    <ion-spinner name="bubbles"></ion-spinner>
+    <div>กรุณารอสักครู่</div>
+  </div>
   <div *ngFor="let item of dataService.department">
     <ion-card mode="ios" *ngIf="item.selected">
       <ion-card-header class="item-header">

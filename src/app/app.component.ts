@@ -4,8 +4,10 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { ManageQueuePage } from '../pages/manage-queue/manage-queue';
 
 import { DataService } from '../services/data.service';
+import { LoginService } from '../services/login.service';
 
 // Import the AF2 Module
 import { defaultFirebase, FIREBASE_PROVIDERS } from 'angularfire2';
@@ -23,6 +25,7 @@ const firebaseConfig = {
 @Component({
   templateUrl: 'app.html',
   providers: [
+    LoginService,
     DataService,
     FIREBASE_PROVIDERS,
     defaultFirebase(firebaseConfig)
@@ -34,14 +37,15 @@ export class MyApp {
   rootPage = TabsPage;
   loginPage = LoginPage;
 
-  pages: Array<{title: string, icon: string, page: any}>;
+  pages: Array<{title: string, icon: string, admin: boolean, page: any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, public loginService: LoginService) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'ระบบคิว', icon: 'logo-buffer', page: TabsPage }
+      { title: 'ระบบคิว', icon: 'logo-buffer', admin: false, page: TabsPage },
+      { title: 'จัดการคิว', icon: 'settings', admin: true, page: ManageQueuePage }
     ];
 
   }

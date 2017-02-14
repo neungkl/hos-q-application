@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class DataService {
 
-  department: Array<any>;
+  department: Array<any> = [];
 
   constructor(private af: AngularFire) {
     this.department = [];

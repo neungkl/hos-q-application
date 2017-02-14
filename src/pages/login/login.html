@@ -12,17 +12,17 @@
 
     <ion-item>
       <ion-label fixed>ชื่อผู้ใช้</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)]="user"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed>รหัสผ่าน</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="pass"></ion-input>
     </ion-item>
 
   </ion-list>
 
   <div padding>
-    <button mode="ios" ion-button full>ลงชื่อเข้าใช้</button>
+    <button mode="ios" ion-button full (click)="logout()">ลงชื่อเข้าใช้</button>
   </div>
 </ion-content>

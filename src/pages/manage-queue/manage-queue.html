@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="main-bg">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>จัดการคิว</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content" padding>
+  <div text-center *ngIf="dataService.department.length == 0">
+    <ion-spinner name="bubbles"></ion-spinner>
+    <div>กรุณารอสักครู่</div>
+  </div>
+  <div *ngFor="let item of dataService.department">
+    <ion-card mode="ios">
+      <ion-card-header class="item-header">
+        <div class="item-id">{{ item.id }}</div>
+        <div class="item-name">{{ item.name }}</div>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50 text-center>
+              <div>คิวปัจจุบัน</div>
+              <h1>{{ item.currentQueue }}</h1>
+            </ion-col>
+            <ion-col width-50 text-center>
+              <div>คิวทั้งหมด</div>
+              <h1>{{ item.totalQueue }}</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-100 text-center>
+              <button ion-button small color="primary">
+                <ion-icon name="md-add"></ion-icon>
+                &nbsp;&nbsp;เพิ่ม
+              </button>
+              <button ion-button small color="primary">
+                <ion-icon name="md-remove"></ion-icon>
+                &nbsp;&nbsp;ลด
+              </button>
+              <button ion-button small color="primary">
+                <ion-icon name="md-refresh"></ion-icon>
+                &nbsp;&nbsp;รีเซ็ต
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

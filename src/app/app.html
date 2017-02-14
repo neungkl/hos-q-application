@@ -7,17 +7,23 @@
 
   <ion-content>
     <ion-list>
-      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p.page)">
-        <ion-icon item-left name="{{ p.icon }}"></ion-icon>
-        {{p.title}}
-      </button>
+      <div *ngFor="let p of pages">
+        <button ion-item menuClose *ngIf="!p.admin || loginService.isLogin" (click)="openPage(p.page)">
+          <ion-icon item-left name="{{ p.icon }}"></ion-icon>
+          {{p.title}}
+        </button>
+      </div>
     </ion-list>
   </ion-content>
 
   <ion-footer>
-    <button ion-item no-lines menuClose (click)="openPage(loginPage)">
+    <button *ngIf="!loginService.isLogin" ion-item no-lines menuClose (click)="openPage(loginPage)">
       <ion-icon item-left name="contacts"></ion-icon>
       เข้าใช้ระบบ
+    </button>
+    <button *ngIf="loginService.isLogin" ion-item no-lines menuClose (click)="loginService.logout()">
+      <ion-icon item-left name="contacts"></ion-icon>
+      ออกจากระบบ
     </button>
   </ion-footer>
 

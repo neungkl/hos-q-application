@@ -5,6 +5,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { QueuePage } from '../pages/queue/queue';
 import { DepartmentPage } from '../pages/department/department';
 import { LoginPage } from '../pages/login/login';
+import { ManageQueuePage } from '../pages/manage-queue/manage-queue';
 import { AngularFireModule } from 'angularfire2';
 
 export const firebaseConfig = {
@@ -21,7 +22,8 @@ export const firebaseConfig = {
     TabsPage,
     QueuePage,
     DepartmentPage,
-    LoginPage
+    LoginPage,
+    ManageQueuePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -33,7 +35,8 @@ export const firebaseConfig = {
     TabsPage,
     QueuePage,
     DepartmentPage,
-    LoginPage
+    LoginPage,
+    ManageQueuePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
