@@ -8,7 +8,7 @@ export class DepartmentService {
       { name: 'คลินิกโรคเฉพาะทาง', selected: true },
       { name: 'คลินิกทันตกรรม', selected: false },
       { name: 'คลินิกกายภาพบำบัด', selected: false },
-      { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: true },
+      { name: 'คลินิกทันตกรรม', selected: true },
       { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
     ];
 
