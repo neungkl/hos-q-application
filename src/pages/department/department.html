@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="green">
+  <ion-navbar color="main-bg">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,7 +8,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="content" color="feature">
 
   <h3 padding-top padding-bottom text-center>กรุณาเลือกแผนก :</h3>
 
@@ -19,6 +19,8 @@
     </ion-item>
   </ion-list>
 
-  <button ion-button round text-center>Continue</button>
+  <div text-center margin-bottom>
+    <button ion-button mode="ios" (click)="viewQueuePage()">ดูคิวของคุณ</button>
+  </div>
 
 </ion-content>

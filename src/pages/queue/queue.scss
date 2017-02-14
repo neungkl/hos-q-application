@@ -1,3 +1,55 @@
 page-queue {
+  ion-content.content {
+    background-color: color($colors, white-bg, base);
+  }
+  ion-card {
 
+    .reserve-queue-btn {
+      margin: 0px;
+      padding: 25px 0px;
+      font-size: 1.5rem;
+    }
+
+    .item-header {
+      padding: 0px;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      .item-id {
+        background: color($colors, forest, base);
+        width: 60px;
+        height: 50px;
+        text-align: center;
+        padding: 5px;
+        font-size: 3rem;
+        color: white;
+      }
+      .item-name {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        padding-top: 15px;
+        background: color($colors, marine, base);
+        color: white;
+      }
+    }
+
+    .queue-alert {
+      padding: 10px 15px;
+      border-radius: 3px;
+      color: white;
+    }
+
+    .queue-alert-green {
+      background-color: #2f9e2f;
+    }
+
+    .queue-alert-yellow {
+      background-color: #e0a416;
+    }
+
+    .queue-alert-red {
+      background-color: #ad1007;
+    }
+  }
 }

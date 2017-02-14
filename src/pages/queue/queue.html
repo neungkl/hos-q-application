@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="green">
+  <ion-navbar color="main-bg">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,16 +7,38 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="content" padding>
   <div *ngFor="let item of departmentService.list">
-    <ion-card *ngIf="item.selected">
-      <ion-card-header>
-        {{ item.id }} {{ item.name }}
+    <ion-card mode="ios" *ngIf="item.selected">
+      <ion-card-header class="item-header">
+        <div class="item-id">{{ item.id }}</div>
+        <div class="item-name">{{ item.name }}</div>
       </ion-card-header>
       <ion-card-content>
-        <h1 text-center>{{ item.queue }}</h1>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50 text-center>
+              <div>คิวปัจจุบัน</div>
+              <h1>{{ item.currentQueue }}</h1>
+            </ion-col>
+            <ion-col width-50 text-center>
+              <div>คิวทั้งหมด</div>
+              <h1>{{ item.totalQueue }}</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col width-100 text-center>
+              <div class="queue-alert queue-alert-green">
+                เหลือคิวทั้งหมด {{ item.totalQueue - item.currentQueue }} คิว
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
-      <button ion-button full>จองคิว</button>
+      <button class="reserve-queue-btn" color="queue-btn" ion-button full>
+        <ion-icon name="logo-buffer"></ion-icon>
+        &nbsp;&nbsp;จองคิว
+      </button>
     </ion-card>
   </div>
 </ion-content>
