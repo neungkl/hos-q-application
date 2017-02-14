@@ -13,7 +13,7 @@
   <h3 padding-top padding-bottom text-center>กรุณาเลือกแผนก :</h3>
 
   <ion-list>
-    <ion-item *ngFor="let item of departmentService.list">
+    <ion-item *ngFor="let item of dataService.department">
       <ion-label>{{ item.name }}</ion-label>
       <ion-checkbox [(ngModel)]="item.selected"></ion-checkbox>
     </ion-item>

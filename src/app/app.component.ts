@@ -5,7 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 
-import { DepartmentService } from '../services/department.service';
+import { DataService } from '../services/data.service';
 
 // Import the AF2 Module
 import { defaultFirebase, FIREBASE_PROVIDERS } from 'angularfire2';
@@ -23,7 +23,7 @@ const firebaseConfig = {
 @Component({
   templateUrl: 'app.html',
   providers: [
-    DepartmentService,
+    DataService,
     FIREBASE_PROVIDERS,
     defaultFirebase(firebaseConfig)
   ]
