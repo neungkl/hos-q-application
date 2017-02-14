@@ -3,6 +3,7 @@ export class DepartmentService {
   list: Array<any>;
 
   constructor() {
+
     this.list = [
       { name: 'คลินิกตรวจสุขภาพทั่วไป', selected: false },
       { name: 'คลินิกโรคเฉพาะทาง', selected: true },

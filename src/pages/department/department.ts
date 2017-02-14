@@ -5,7 +5,8 @@ import { DepartmentService } from '../../services/department.service';
 
 @Component({
   selector: 'page-department',
-  templateUrl: 'department.html'
+  templateUrl: 'department.html',
+
 })
 export class DepartmentPage {
 

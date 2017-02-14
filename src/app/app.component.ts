@@ -7,9 +7,26 @@ import { LoginPage } from '../pages/login/login';
 
 import { DepartmentService } from '../services/department.service';
 
+// Import the AF2 Module
+import { defaultFirebase, FIREBASE_PROVIDERS } from 'angularfire2';
+
+// AF2 Settings
+const firebaseConfig = {
+  apiKey: "AIzaSyDJcfq9sICacVacAhkysIBHWgKRpBJ1Atc",
+  authDomain: "hos-q-24aa5.firebaseapp.com",
+  databaseURL: "https://hos-q-24aa5.firebaseio.com",
+  storageBucket: "hos-q-24aa5.appspot.com",
+  messagingSenderId: "237093806123"
+};
+
+
 @Component({
   templateUrl: 'app.html',
-  providers: [ DepartmentService ]
+  providers: [
+    DepartmentService,
+    FIREBASE_PROVIDERS,
+    defaultFirebase(firebaseConfig)
+  ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
