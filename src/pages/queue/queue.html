@@ -22,20 +22,28 @@
               <h1>{{ item.currentQueue }}</h1>
             </ion-col>
             <ion-col width-50 text-center>
-              <div>คิวทั้งหมด</div>
-              <h1>{{ item.totalQueue }}</h1>
+              <div>คิวของคุณ</div>
+              <h1>{{ item.yourQueue }}</h1>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col width-100 text-center>
-              <div class="queue-alert queue-alert-green">
-                เหลือคิวทั้งหมด {{ item.totalQueue - item.currentQueue }} คิว
+              <div [ngSwitch]="queueLevel(item.yourQueue - item.currentQueue)">
+                <div *ngSwitchCase="'safe'" class="queue-alert queue-alert-green">
+                  เหลือคิวทั้งหมด {{ item.yourQueue - item.currentQueue }} คิว
+                </div>
+                <div *ngSwitchCase="'warn'" class="queue-alert queue-alert-yellow">
+                  เหลือคิวอีกแค่ {{ item.yourQueue - item.currentQueue }} คิว
+                </div>
+                <div *ngSwitchCase="'late'" class="queue-alert queue-alert-red">
+                  คิวของคุณผ่านไปแล้ว
+                </div>
               </div>
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-card-content>
-      <button class="reserve-queue-btn" color="queue-btn" ion-button full>
+      <button *ngIf="item.yourQueue < 0" class="reserve-queue-btn" color="queue-btn" ion-button full>
         <ion-icon name="logo-buffer"></ion-icon>
         &nbsp;&nbsp;จองคิว
       </button>

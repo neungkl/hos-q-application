@@ -14,4 +14,10 @@ export class QueuePage {
   ionViewDidLoad() {
   }
 
+  queueLevel(value: number) {
+    if(value > 10) return 'safe';
+    if(value >= 0) return 'warn';
+    return 'late';
+  }
+
 }

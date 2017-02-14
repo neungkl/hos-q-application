@@ -14,7 +14,7 @@ export class DepartmentService {
     for(let i = 0; i < this.list.length; i++) {
       this.list[i].id = i+1;
       this.list[i].currentQueue = Math.floor(Math.random()*40)
-      this.list[i].totalQueue = Math.floor(Math.random()*40)
+      this.list[i].yourQueue = Math.floor(Math.random()*40)
     }
   }
 
