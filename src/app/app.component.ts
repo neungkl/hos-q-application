@@ -63,4 +63,9 @@ export class MyApp {
       Splashscreen.hide();
     });
   }
+
+  logout() {
+    this.loginService.logout();
+    this.openPage(TabsPage);
+  }
 }

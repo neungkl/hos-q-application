@@ -12,6 +12,9 @@
     <ion-spinner name="bubbles"></ion-spinner>
     <div>กรุณารอสักครู่</div>
   </div>
+  <div *ngIf="dataService.department.length > 0" text-center>
+    <h3>ระบบจัดการคิว</h3>
+  </div>
   <div *ngFor="let item of dataService.department">
     <ion-card mode="ios">
       <ion-card-header class="item-header">
@@ -32,15 +35,15 @@
           </ion-row>
           <ion-row>
             <ion-col width-100 text-center>
-              <button ion-button small color="primary">
+              <button ion-button small mode="ios" color="primary" (click)="increaseQueue(item)">
                 <ion-icon name="md-add"></ion-icon>
                 &nbsp;&nbsp;เพิ่ม
               </button>
-              <button ion-button small color="primary">
+              <button ion-button small mode="ios" color="primary" (click)="decreaseQueue(item)">
                 <ion-icon name="md-remove"></ion-icon>
                 &nbsp;&nbsp;ลด
               </button>
-              <button ion-button small color="primary">
+              <button ion-button small mode="ios" color="primary" (click)="resetQueue(item)">
                 <ion-icon name="md-refresh"></ion-icon>
                 &nbsp;&nbsp;รีเซ็ต
               </button>

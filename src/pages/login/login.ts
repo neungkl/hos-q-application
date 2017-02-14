@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { LoginService } from '../../services/login.service';
+import { ManageQueuePage } from '../manage-queue/manage-queue';
 
 @Component({
   selector: 'page-login',
@@ -15,16 +16,13 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private loginService: LoginService) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
   }
 
   login() {
+    console.log(this.user, this.pass);
     if(this.loginService.login(this.user, this.pass)) {
-      
+      this.navCtrl.setRoot(ManageQueuePage);
     }
   }
 
-  logout() {
-    this.loginService.logout();
-  }
 }

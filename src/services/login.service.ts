@@ -6,7 +6,6 @@ export class LoginService {
   isLogin: boolean = false;
 
   constructor() {
-    this.isLogin = true;
   }
 
   login(user: string, pass: string) {

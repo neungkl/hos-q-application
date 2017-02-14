@@ -22,7 +22,7 @@ export class DataService {
           currentQueue: item[i].currentQueue,
           totalQueue: item[i].totalQueue,
           yourQueue: -1,
-          selected: true
+          selected: i == 0
         })
       }
     }.bind(this));

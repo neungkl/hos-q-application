@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { DataService } from '../../services/data.service';
 
@@ -9,15 +9,51 @@ import { DataService } from '../../services/data.service';
 })
 export class ManageQueuePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataService ) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private dataService: DataService,
+    private alertCtrl: AlertController
+  ) { }
 
   ionViewDidLoad() {
   }
 
-  queueLevel(value: number) {
-    if(value > 10) return 'safe';
-    if(value >= 0) return 'warn';
-    return 'late';
+  decreaseQueue(item) {
+    let id = item.id - 1;
+    let curQueue = this.dataService.department[id].currentQueue;
+    if (curQueue > 0) {
+      this.dataService.updateItem(id, { currentQueue: curQueue - 1 });
+    }
+  }
+
+  increaseQueue(item) {
+    let id = item.id - 1;
+    let curQueue = this.dataService.department[id].currentQueue;
+    if (curQueue < this.dataService.department[id].totalQueue) {
+      this.dataService.updateItem(id, { currentQueue: curQueue + 1 });
+    }
+  }
+
+  resetQueue(item) {
+    let id = item.id - 1;
+    let alert = this.alertCtrl.create({
+      title: 'ยืนยันการรีเซ็ต',
+      message: 'คุณแน่ใจหรือไม่ที่จะรีเซ็ตคิวนี้ ?',
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          role: 'cancel'
+        },
+        {
+          text: 'รีเซ็ต',
+          handler: () => {
+            this.dataService.updateItem(id, { currentQueue: 0, totalQueue: 0 });
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

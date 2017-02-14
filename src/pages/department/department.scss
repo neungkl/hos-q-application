@@ -1,5 +1,6 @@
 page-department {
   ion-content.content {
-    background-color: color($colors, white-bg, base);
+    background: url('../assets/image/background.png') color($colors, white-bg, base);
+    background-size: cover;
   }
 }

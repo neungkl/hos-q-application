@@ -1,7 +1,9 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar color="main-bg">
-      <ion-title>Hos Q</ion-title>
+      <ion-title text-center>
+        <img style="margin:10px 0px;" src="assets/image/logo.png" height="35">
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -21,7 +23,7 @@
       <ion-icon item-left name="contacts"></ion-icon>
       เข้าใช้ระบบ
     </button>
-    <button *ngIf="loginService.isLogin" ion-item no-lines menuClose (click)="loginService.logout()">
+    <button *ngIf="loginService.isLogin" ion-item no-lines menuClose (click)="logout()">
       <ion-icon item-left name="contacts"></ion-icon>
       ออกจากระบบ
     </button>
