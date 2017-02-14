@@ -49,7 +49,7 @@
           </ion-row>
         </ion-grid>
       </ion-card-content>
-      <button *ngIf="item.yourQueue < 0" class="reserve-queue-btn" color="queue-btn" ion-button full>
+      <button *ngIf="item.yourQueue < 0" class="reserve-queue-btn" color="queue-btn" (click)="reserveQueue(item)" ion-button full>
         <ion-icon name="logo-buffer"></ion-icon>
         &nbsp;&nbsp;จองคิว
       </button>

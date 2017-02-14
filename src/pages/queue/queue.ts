@@ -20,4 +20,16 @@ export class QueuePage {
     return 'late';
   }
 
+  reserveQueue(item) {
+    this.dataService.crawlItem(item.id - 1, function(response) {
+      let id = item.id - 1;
+      for(let i = 0; i < response.length; i++) {
+        this.dataService.department[id][response[i].$key] = response[i].$value;
+      }
+      let totalQueue = this.dataService.department[id].totalQueue;
+      this.dataService.department[id].yourQueue = totalQueue + 1;
+      this.dataService.updateItem(id, { totalQueue: totalQueue + 1 });
+    }.bind(this));
+  }
+
 }
